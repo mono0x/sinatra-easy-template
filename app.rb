@@ -13,11 +13,7 @@ require 'sass'
 $LOAD_PATH.unshift 'lib'
 require 'haml/filters/blockcode'
 
-set :haml, :format => :html5
-
-helpers do
-  alias h escape_html
-end
+set :haml, format: :html5, escape_html: true, attr_wrapper: '"', ugly: production?
 
 get '/' do
   haml :index
