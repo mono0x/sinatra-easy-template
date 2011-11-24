@@ -1,3 +1,5 @@
-require './application'
-run Application
+# -*- coding: utf-8 -*-
 
+require './application'
+
+run Application

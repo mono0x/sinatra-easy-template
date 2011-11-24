@@ -7,7 +7,7 @@ guard 'pow' do
   watch('.rvmrc')
   watch('Gemfile')
   watch('Gemfile.lock')
-  watch('app.rb')
+  watch('application.rb')
 end
 
 guard 'bundler' do
