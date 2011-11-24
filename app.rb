@@ -9,11 +9,13 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'sass'
+require 'compass'
 
 $LOAD_PATH.unshift 'lib'
 require 'haml/filters/blockcode'
 
 set :haml, format: :html5, escape_html: true, attr_wrapper: '"', ugly: production?
+set :scss, Compass.sass_engine_options.merge(style: production? ? :compressed : :nested)
 
 get '/' do
   haml :index

@@ -1,25 +1,27 @@
 @charset "utf-8";
 
-@import "mixin";
+$blueprint-border-color: #eee;
+
+@import "compass/css3";
+@import "blueprint/grid";
 
 section, article, aside, header, footer, nav {
   display: block;
 }
 
 body {
-  @include span-24;
-  margin: auto;
+  @include container;
+  overflow: auto;
   line-height: 1.5;
 }
 
 body > header {
-  @include column;
-  @include span-24;
+  @include column(24);
   margin-top: 1em;
   padding-bottom: 0.5em;
   * { margin: 0; }
   h1 {
-    @include span-13;
+    @include span(13);
     @include border-radius(20px);
     @include box-shadow(3px 3px 2px #888888);
     font: {
@@ -38,8 +40,7 @@ body > header {
 }
 
 header > nav {
-  @include column;
-  @include span-24;
+  @include column(24);
   margin-left: 10px;
   padding: 11px 0;
   border-bottom: 1px dashed #b1ad9b;
@@ -70,8 +71,7 @@ header > nav {
 }
 
 #contents {
-  @include column;
-  @include span-17;
+  @include column(17);
   @include colborder;
 
   section {
@@ -161,7 +161,7 @@ header > nav {
   }
 
   .download {
-    @include span-7;
+    @include span(7);
     @include border-radius(10px);
     margin: { top: 1.0em; bottom: 1.0em; };
     padding: { top: 1.0em; bottom: 1.0em; };
@@ -171,7 +171,7 @@ header > nav {
   }
 
   .srccode {
-    @include span-5;
+    @include span(5);
     @include border-radius(10px);
     margin: { top: 1.0em; bottom: 1.0em; };
     padding: { top: 1.0em; bottom: 1.0em; };
@@ -182,8 +182,7 @@ header > nav {
 }
 
 body > aside {
-  @include column;
-  @include span-6;
+  @include column(6);
   @include last;
 
   h1 { font-size: 1.2em; margin: { bottom: 0.5em; }; }
@@ -194,13 +193,11 @@ body > aside {
 }
 
 body > hr {
-  @include column;
-  @include span-24;
+  @include column(24);
 }
 
 body > footer {
-  @include column;
-  @include span-24;
+  @include column(24);
 
   text-align: right;
   font-size: small;
