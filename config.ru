@@ -1,3 +1,3 @@
-require './app'
-run Sinatra::Application
+require './application'
+run Application
 
