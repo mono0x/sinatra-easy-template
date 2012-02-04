@@ -6,6 +6,7 @@ gem 'compass'
 gem 'sprockets'
 gem 'sprockets-sass'
 gem 'sprockets-helpers'
+gem 'yui-compressor', require: 'yui/compressor'
 group :development do
   gem 'guard'
   gem 'guard-pow'

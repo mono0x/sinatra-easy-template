@@ -11,9 +11,6 @@ class Application < Sinatra::Base
   configure do
     set :site_title, ENV['SITE_TITLE']
 
-    Sprockets::Sass.options = {
-      style: production? ? :compressed : :nested,
-    }
     Sprockets::Helpers.configure do |config|
       config.environment = sprockets
       config.prefix = '/assets'
@@ -21,6 +18,10 @@ class Application < Sinatra::Base
     end
     sprockets.append_path 'assets/javascripts'
     sprockets.append_path 'assets/stylesheets'
+    if production?
+      sprockets.js_compressor = YUI::JavaScriptCompressor.new(munge: true, optimize: true)
+      sprockets.css_compressor = YUI::CssCompressor.new
+    end
   end
 
   helpers Sprockets::Helpers
