@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*-
 
+require 'bundler'
+Bundler.require
+
 require './application'
 
-run Application
+map '/assets' do
+  run Application.sprockets
+end
+map '/' do
+  run Application
+end
