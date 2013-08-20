@@ -16,6 +16,7 @@ class Application < Sinatra::Base
       config.prefix = '/assets'
       config.digest = true
     end
+    sprockets.append_path 'bower_components'
     sprockets.append_path 'assets/javascripts'
     sprockets.append_path 'assets/stylesheets'
     if production?

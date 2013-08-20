@@ -1,4 +1,5 @@
-source :rubygems
+source 'https://rubygems.org'
+gem 'foreman'
 gem 'sinatra'
 gem 'haml'
 gem 'sass'
@@ -13,4 +14,7 @@ group :development do
   gem 'guard-bundler'
   gem 'rb-inotify'
   gem 'rb-fsevent'
+end
+group :production do
+  gem 'thin'
 end

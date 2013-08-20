@@ -4,6 +4,12 @@
     %meta{charset: 'utf-8'}
     %title= [ @page_title, settings.site_title ].compact.join(' - ')
     %link{rel: 'stylesheet', type: 'text/css', href: stylesheet_path('application')}
+    <!--[if lt IE 9]>
+    %script#application{type: 'text/javascript', src: javascript_path('application.legacy'), defer: 'defer'}
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    %script#application{type: 'text/javascript', src: javascript_path('application'), defer: 'defer'}
+    <!--<![endif]-->
   %body
     #container
       %header

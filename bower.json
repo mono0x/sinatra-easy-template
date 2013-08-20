@@ -1,0 +1,8 @@
+{
+  "name": "Sinatra Easy Template",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.0",
+    "jquery-legacy": "jquery#1.10"
+  }
+}
